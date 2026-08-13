@@ -1,0 +1,7 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://csu8iymqsckm8"]
+
+[ext_resource type="Texture2D" uid="uid://xhpk3rpn5g3l" path="res://Assets/sprites/Player/Heart_Health_Bar.png" id="1_7j41y"]
+
+[resource]
+atlas = ExtResource("1_7j41y")
+region = Rect2(0, 48, 8, 8)

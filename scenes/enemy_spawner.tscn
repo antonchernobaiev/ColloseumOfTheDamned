@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://cxoag041hhiqx"]
+
+[ext_resource type="Script" uid="uid://cku0h3gl3abab" path="res://Scripts/enemy_spawner.gd" id="1_ks1gq"]
+
+[node name="EnemySpawner" type="Node2D" unique_id=1405415132 groups=["wave_maneger"]]
+position = Vector2(0, 3)
+script = ExtResource("1_ks1gq")
+
+[node name="Timer" type="Timer" parent="." unique_id=2103676064]
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=208161677]
+position = Vector2(0, 3)
+
+[node name="Marker2D2" type="Marker2D" parent="." unique_id=1241532361]
+position = Vector2(9, 329)
+
+[node name="Marker2D3" type="Marker2D" parent="." unique_id=1568483026]
+position = Vector2(376, 315)
+
+[node name="Marker2D4" type="Marker2D" parent="." unique_id=1453780350]
+position = Vector2(347, -13)
+
+[node name="Marker2D5" type="Marker2D" parent="." unique_id=1648576837]
+position = Vector2(440, 157)
+
+[node name="Marker2D6" type="Marker2D" parent="." unique_id=83898746]
+position = Vector2(187, 394)
+
+[node name="Marker2D7" type="Marker2D" parent="." unique_id=1675289560]
+position = Vector2(-60, 159)
+
+[node name="Marker2D8" type="Marker2D" parent="." unique_id=106513881]
+position = Vector2(184, -80)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

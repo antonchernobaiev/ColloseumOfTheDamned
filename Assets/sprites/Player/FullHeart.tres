@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://dnwl8mkfd4lu7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i2udr"]
+load_path = "res://.godot/imported/Heart_Health_Bar.png-6e7ceb58523419d0890a491a1d517262.ctex"
+
+[resource]
+atlas = SubResource("CompressedTexture2D_i2udr")
+region = Rect2(0, 0, 8, 8)

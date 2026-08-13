@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://cejbfgc47j0js"]
+
+[ext_resource type="Script" uid="uid://cvdharjbhv2h3" path="res://scenes/hud.gd" id="1_047uy"]
+[ext_resource type="Script" uid="uid://b372r1il2rrm7" path="res://scenes/heart_container.gd" id="1_ahhtf"]
+[ext_resource type="Texture2D" uid="uid://dnwl8mkfd4lu7" path="res://Assets/sprites/Player/FullHeart.tres" id="2_6fi6k"]
+[ext_resource type="Texture2D" uid="uid://i64pm60c7v6x" path="res://Assets/sprites/Player/HalfHeart.tres" id="3_uo2fv"]
+[ext_resource type="Texture2D" uid="uid://csu8iymqsckm8" path="res://Assets/sprites/Player/NoHeart.tres" id="4_047uy"]
+[ext_resource type="Script" uid="uid://bcqfr3c1pskj1" path="res://scenes/node_2d.gd" id="5_uo2fv"]
+[ext_resource type="Script" uid="uid://bqkhrverwo7ig" path="res://scenes/potion.gd" id="7_hd3ao"]
+[ext_resource type="Texture2D" uid="uid://b32pxo0qqlgxe" path="res://Assets/sprites/Player/Potion.tres" id="8_0i1j5"]
+[ext_resource type="Script" uid="uid://c8cwn8ajcfq08" path="res://scenes/game_over_screen.gd" id="9_0i1j5"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uo2fv"]
+font_size = 48
+
+[node name="HUD" type="CanvasLayer" unique_id=1263296263 groups=["hud"]]
+script = ExtResource("1_047uy")
+
+[node name="HeartContainer" type="HBoxContainer" parent="." unique_id=727649073 groups=["player"]]
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 45.0
+offset_bottom = 13.0
+scale = Vector2(5, 5)
+script = ExtResource("1_ahhtf")
+heart_full = ExtResource("2_6fi6k")
+heart_half = ExtResource("3_uo2fv")
+heart_empty = ExtResource("4_047uy")
+
+[node name="WaveDisplay" type="Node2D" parent="." unique_id=2057861834 groups=["wave_label"]]
+script = ExtResource("5_uo2fv")
+
+[node name="WavePanel" type="Polygon2D" parent="WaveDisplay" unique_id=1518154842]
+position = Vector2(1, 0)
+color = Color(0, 0, 0, 0.76862746)
+
+[node name="WaveLabel" type="Label" parent="WaveDisplay" unique_id=886833217]
+offset_right = 40.0
+offset_bottom = 23.0
+label_settings = SubResource("LabelSettings_uo2fv")
+metadata/_edit_use_anchors_ = true
+
+[node name="Potion" type="HBoxContainer" parent="." unique_id=1395639210]
+offset_left = 73.0
+offset_top = 49.0
+offset_right = 117.0
+offset_bottom = 60.0
+scale = Vector2(3, 3)
+script = ExtResource("7_hd3ao")
+_potion = ExtResource("8_0i1j5")
+
+[node name="GameOverScreen" type="Control" parent="." unique_id=1333302942]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.0
+offset_top = -124.0
+offset_right = -36.0
+offset_bottom = -84.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_0i1j5")
+
+[node name="ColorRect" type="ColorRect" parent="GameOverScreen" unique_id=144849679]
+layout_mode = 0
+offset_right = 100.0
+offset_bottom = 100.0
+scale = Vector2(2, 2)
+color = Color(0, 0, 0, 0.45882353)
+
+[node name="GameOverLabel" type="Label" parent="GameOverScreen" unique_id=817197354]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 10.0
+offset_right = 83.0
+offset_bottom = 33.0
+scale = Vector2(2, 2)
+pivot_offset = Vector2(-15, -10)
+text = "You died"
+
+[node name="WaveReachedLabel" type="Label" parent="GameOverScreen" unique_id=38634635]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 80.0
+offset_right = 60.0
+offset_bottom = 103.0
+
+[node name="ReturnButton" type="Button" parent="GameOverScreen" unique_id=606208654]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 120.0
+offset_right = 165.0
+offset_bottom = 151.0
+pivot_offset = Vector2(1, 0)
+text = "Return to Menu"

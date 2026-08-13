@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://qm5lkye00res"]
+
+[ext_resource type="PackedScene" uid="uid://ctt2a8mva22c2" path="res://scenes/player.tscn" id="1_elqb8"]
+[ext_resource type="PackedScene" uid="uid://cejbfgc47j0js" path="res://scenes/hud.tscn" id="2_rarhs"]
+[ext_resource type="PackedScene" uid="uid://cjvt8d3l1g6q1" path="res://scenes/world.tscn" id="3_0bbpv"]
+[ext_resource type="PackedScene" uid="uid://cxoag041hhiqx" path="res://scenes/enemy_spawner.tscn" id="4_rarhs"]
+
+[node name="Main" type="Node2D" unique_id=296013829]
+
+[node name="Player" parent="." unique_id=1926806901 instance=ExtResource("1_elqb8")]
+z_index = 5
+position = Vector2(317, 335)
+
+[node name="World" parent="." unique_id=484744533 instance=ExtResource("3_0bbpv")]
+
+[node name="EnemySpawner" parent="." unique_id=1405415132 node_paths=PackedStringArray("wave_display") instance=ExtResource("4_rarhs")]
+z_index = 20
+position = Vector2(142, 163)
+wave_display = NodePath("../HUD")
+
+[node name="HUD" parent="." unique_id=1263296263 instance=ExtResource("2_rarhs")]
