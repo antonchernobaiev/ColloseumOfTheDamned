@@ -8,3 +8,8 @@ I decide to start to work on this due to an event hosted by hack club
 right now there is only one type of enemy, but I am planing to add more
 if you want to play it you can go to this link
 https://colloseumofthedamned.netlify.app/
+
+Credits:
+Player sprite created by Mattz Art - Adventurer 2D Top-Down
+Enemy sprite by Immunity451 - skeleton pack
+
